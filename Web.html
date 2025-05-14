@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Journey as a Software Engineering Student</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            transition: all 0.3s ease;
+            background-color: #f9f7fe;
+        }
+        header {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(90deg, #ff7eb3, #ff758c);
+            margin: 0;
+            padding: 1rem 0;
+        }
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        nav ul li a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        section {
+            padding: 2rem;
+            margin: 1rem auto;
+            max-width: 800px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        button {
+            background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            margin: 0.5rem;
+            cursor: pointer;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .highlight {
+            background-color: #fffacd;
+            padding: 0.5rem;
+            border-left: 4px solid #ffd700;
+        }
+        .dark-mode {
+            background-color: #1a1a2e;
+            color: #e6e6e6;
+        }
+        .dark-mode section {
+            background-color: #16213e;
+            color: #e6e6e6;
+        }
+        .dark-mode header {
+            background: linear-gradient(135deg, #434343, #000000);
+        }
+        .dark-mode nav ul {
+            background: linear-gradient(90deg, #614385, #516395);
+        }
+        #dynamic-content p {
+            padding: 1rem;
+            background: #f0f8ff;
+            border-radius: 5px;
+            border-left: 4px solid #4facfe;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(90deg, #a1c4fd, #c2e9fb);
+            margin-top: 2rem;
+        }
+        .dark-mode footer {
+            background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="main-title">Welcome to My Journey</h1>
+        <p id="intro-text">Hi, I'm a software engineering student just starting out with no prior experience. This is my story!</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#goals">My Goals</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p id="about-text">Hello! I'm a passionate software engineering student who recently started my journey into the world of programming. With no prior experience, I'm excited to learn and grow in this field. I believe in taking small steps every day to achieve big dreams.</p>
+            <button id="highlight-btn">Highlight Text</button>
+            <button id="change-color-btn">Toggle Dark Mode</button>
+        </section>
+
+        <section id="goals">
+            <h2>My Goals</h2>
+            <p>As a beginner, my primary goals are:</p>
+            <ul id="goals-list">
+                <li>Learn the fundamentals of programming and software development.</li>
+                <li>Build small projects to apply what I learn.</li>
+                <li>Collaborate with others and contribute to open-source projects.</li>
+                <li>Land an internship or entry-level role in the tech industry.</li>
+            </ul>
+            <button id="add-goal-btn">Add Random Goal</button>
+            <button id="remove-goal-btn">Remove Last Goal</button>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <p>I'm just starting out, so I don't have many projects yet. However, I'm working on:</p>
+            <ul id="projects-list">
+                <li>A personal portfolio website (like this one!).</li>
+                <li>A simple calculator using HTML, CSS, and JavaScript.</li>
+                <li>A to-do list app to practice my skills.</li>
+            </ul>
+            <div id="dynamic-content"></div>
+            <button id="toggle-content-btn">Show Special Message</button>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <h2>Contact Me</h2>
+        <p>If you'd like to connect or share advice, feel free to reach out:</p>
+        <ul>
+            <li>Email: <a href="mailto:ngcobophilile2002@gmail.com">ngcobophilile2002@gmail.com</a></li>
+            <li>GitHub: <a href="https://github.com/phililesnoxolo" target="_blank">githubPhilileSnoxolo.com/</a></li>
+        </ul>
+        <p>&copy; 2025 Philile Ngcobo. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // 1. Highlight Text Button
+            const highlightBtn = document.getElementById('highlight-btn');
+            const aboutText = document.getElementById('about-text');
+            
+            highlightBtn.addEventListener('click', function() {
+                aboutText.classList.toggle('highlight');
+                this.textContent = aboutText.classList.contains('highlight') ? 
+                    'Remove Highlight' : 'Highlight Text';
+            });
+
+            // 2. Dark Mode Toggle
+            const darkModeBtn = document.getElementById('change-color-btn');
+            
+            darkModeBtn.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                const isDarkMode = document.body.classList.contains('dark-mode');
+                
+                this.textContent = isDarkMode ? 'Light Mode' : 'Dark Mode';
+                document.getElementById('main-title').textContent = isDarkMode ? 
+                    'Welcome to My Journey (Night Mode)' : 'Welcome to My Journey';
+            });
+
+            // 3. Add/Remove Goals
+            const goals = [
+                "Learn a new programming language each semester.",
+                "Contribute to at least one open-source project.",
+                "Build a full-stack application by the end of the year.",
+                "Attend local tech meetups and networking events.",
+                "Complete a coding challenge every week.",
+                "Learn about algorithms and data structures.",
+                "Create a technical blog to document my learning.",
+                "Participate in a hackathon."
+            ];
+            
+            const addGoalBtn = document.getElementById('add-goal-btn');
+            const removeGoalBtn = document.getElementById('remove-goal-btn');
+            const goalsList = document.getElementById('goals-list');
+            
+            addGoalBtn.addEventListener('click', function() {
+                const randomGoal = goals[Math.floor(Math.random() * goals.length)];
+                const newItem = document.createElement('li');
+                newItem.textContent = randomGoal;
+                goalsList.appendChild(newItem);
+            });
+            
+            removeGoalBtn.addEventListener('click', function() {
+                if (goalsList.children.length > 4) { // Keep at least the original 4
+                    goalsList.removeChild(goalsList.lastElementChild);
+                }
+            });
+
+            // 4. Toggle Special Message
+            const toggleBtn = document.getElementById('toggle-content-btn');
+            const dynamicContent = document.getElementById('dynamic-content');
+            const specialMessage = document.createElement('p');
+            
+            specialMessage.textContent = "✨ This is a special message! I'm having so much fun learning web development. JavaScript makes websites interactive and dynamic! ✨";
+            specialMessage.style.display = 'none';
+            dynamicContent.appendChild(specialMessage);
+            
+            toggleBtn.addEventListener('click', function() {
+                const isHidden = specialMessage.style.display === 'none';
+                specialMessage.style.display = isHidden ? 'block' : 'none';
+                this.textContent = isHidden ? 'Hide Special Message' : 'Show Special Message';
+            });
+
+            // 5. Change intro text after 3 seconds
+            setTimeout(function() {
+                document.getElementById('intro-text').textContent = 
+                    "Thanks for visiting my page! I'm learning web development and this is my first interactive website!";
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
